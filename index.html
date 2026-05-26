@@ -96,21 +96,80 @@ nav h2{
     font-size:28px;
 }
 
-nav ul{
-    display:flex;
-    gap:35px;
-    list-style:none;
+.nav-menu{
+    position:relative;
 }
 
-nav a{
+.nav-menu-button{
+    border:none;
+    background:transparent;
+    color:#0f172a;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    padding:10px 0;
+}
+
+.nav-menu-button::after{
+    content:"";
+    display:inline-block;
+    width:8px;
+    height:8px;
+    margin-left:10px;
+    border-right:2px solid currentColor;
+    border-bottom:2px solid currentColor;
+    transform:rotate(45deg) translateY(-3px);
+    transition:0.25s;
+}
+
+.nav-menu:hover .nav-menu-button,
+.nav-menu:focus-within .nav-menu-button{
+    color:#2563eb;
+}
+
+.nav-menu:hover .nav-menu-button::after,
+.nav-menu:focus-within .nav-menu-button::after{
+    transform:rotate(225deg) translate(-2px,-1px);
+}
+
+.nav-dropdown{
+    position:absolute;
+    top:calc(100% + 14px);
+    right:0;
+    width:310px;
+    padding:12px;
+    background:rgba(255,255,255,0.96);
+    border:1px solid rgba(15,23,42,0.08);
+    border-radius:8px;
+    box-shadow:0 18px 45px rgba(15,23,42,0.14);
+    list-style:none;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-8px);
+    transition:0.25s ease;
+}
+
+.nav-menu:hover .nav-dropdown,
+.nav-menu:focus-within .nav-dropdown{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.nav-dropdown a{
+    display:block;
     text-decoration:none;
     color:#0f172a;
     font-weight:500;
-    transition:0.3s;
+    padding:11px 12px;
+    border-radius:8px;
+    transition:0.25s;
 }
 
-nav a:hover{
+.nav-dropdown a:hover,
+.nav-dropdown a:focus-visible{
     color:#2563eb;
+    background:#eff6ff;
 }
 
 /* hero */
@@ -123,10 +182,37 @@ nav a:hover{
     align-items:center;
     text-align:center;
     padding:0 10%;
+    position:relative;
+    overflow:hidden;
+    color:white;
+    isolation:isolate;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2200&auto=format&fit=crop");
+    background-size:cover;
+    background-position:center;
+    transform:scale(1.04);
+    z-index:-2;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(4,13,31,0.78),rgba(15,23,42,0.54),rgba(37,99,235,0.25));
+    z-index:-1;
+}
+
+.hero > *{
+    position:relative;
 }
 
 .hero h1{
-    font-family:'Space Grotesk',sans-serif;
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size:84px;
     line-height:1.05;
     margin-bottom:35px;
@@ -135,13 +221,13 @@ nav a:hover{
 }
 
 .hero h1 span{
-    color:#2563eb;
+    color:#7dd3fc;
 }
 
 .hero p{
     max-width:1100px;
     font-size:22px;
-    color:#475569;
+    color:#e2e8f0;
     line-height:2;
     font-weight:300;
 }
@@ -302,6 +388,41 @@ section{
     font-size:15px;
 }
 
+/* team */
+
+.team{
+    padding-top:90px;
+    background:linear-gradient(180deg,rgba(239,246,255,0.2),rgba(219,234,254,0.55));
+}
+
+.team-grid{
+    margin-top:46px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.team-member{
+    background:white;
+    border:1px solid rgba(15,23,42,0.06);
+    border-radius:8px;
+    padding:26px 22px;
+    box-shadow:0 10px 28px rgba(15,23,42,0.04);
+}
+
+.team-member strong{
+    display:block;
+    color:#2563eb;
+    font-size:22px;
+    font-family:'Space Grotesk',sans-serif;
+    margin-bottom:8px;
+}
+
+.team-member span{
+    color:#334155;
+    font-size:17px;
+}
+
 /* detail modal */
 
 .detail-modal{
@@ -416,6 +537,10 @@ footer{
     grid-template-columns:1fr;
 }
 
+.team-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
 .hero h1{
     font-size:52px;
 }
@@ -425,10 +550,21 @@ nav{
     gap:15px;
 }
 
-nav ul{
-    gap:18px;
-    flex-wrap:wrap;
-    justify-content:center;
+.nav-menu{
+    width:100%;
+    text-align:center;
+}
+
+.nav-dropdown{
+    left:50%;
+    right:auto;
+    width:min(310px,90vw);
+    transform:translate(-50%,-8px);
+}
+
+.nav-menu:hover .nav-dropdown,
+.nav-menu:focus-within .nav-dropdown{
+    transform:translate(-50%,0);
 }
 
 .section-title{
@@ -459,6 +595,14 @@ nav ul{
 
 }
 
+@media(max-width:560px){
+
+.team-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
 </style>
 
 </head>
@@ -471,12 +615,15 @@ nav ul{
 
 <h2>AI Healthcare</h2>
 
-<ul>
+<div class="nav-menu">
+<button class="nav-menu-button" type="button">AI and Future Career Development</button>
+<ul class="nav-dropdown">
 <li><a href="#drug">Drug Discovery</a></li>
 <li><a href="#management">Health Management</a></li>
 <li><a href="#clinical">Clinical Treatment</a></li>
 <li><a href="#rehab">Rehabilitation</a></li>
 </ul>
+</div>
 
 </nav>
 
@@ -487,7 +634,7 @@ nav ul{
 <section class="hero">
 
 <h1>
-The Future of <span>AI Healthcare</span>
+The Future of <span>AI Health Care</span>
 </h1>
 
 <p>
@@ -1038,6 +1185,57 @@ AI能够辅助认知康复、
 <div class="card-more">查看详细内容</div>
 
 </div>
+</div>
+
+</div>
+
+</section>
+
+<section class="team" id="team">
+
+<h2 class="section-title">
+<span>05.</span> Production Team
+</h2>
+
+<p class="section-desc">
+Created by our production team.
+</p>
+
+<div class="team-grid">
+
+<div class="team-member">
+<strong>Johnny</strong>
+<span>周轩屹</span>
+</div>
+
+<div class="team-member">
+<strong>Winnie</strong>
+<span>张景烨</span>
+</div>
+
+<div class="team-member">
+<strong>Harry</strong>
+<span>杨沫涵</span>
+</div>
+
+<div class="team-member">
+<strong>Sun Yimo</strong>
+<span>孙一墨</span>
+</div>
+
+<div class="team-member">
+<strong>Eva</strong>
+<span>周思羽</span>
+</div>
+
+<div class="team-member">
+<strong>Ethan</strong>
+<span>李梓昊</span>
+</div>
+
+<div class="team-member">
+<strong>Sherry</strong>
+<span>陈嘉睿</span>
 </div>
 
 </div>
