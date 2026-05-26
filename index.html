@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Drug Discovery</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>AI Healthcare Revolution</title>
 
 <style>
 
@@ -18,74 +15,79 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#050b16;
     color:white;
     overflow-x:hidden;
+    line-height:1.8;
 }
 
-/* 背景渐变 */
+/* 背景光效 */
 
 body::before{
     content:"";
     position:fixed;
-    width:800px;
-    height:800px;
-    background:radial-gradient(circle,#0d5eff55,transparent 70%);
-    top:-300px;
-    right:-200px;
+    width:900px;
+    height:900px;
+    background:radial-gradient(circle,#0066ff33,transparent 70%);
+    top:-350px;
+    right:-250px;
     z-index:-1;
 }
 
 body::after{
     content:"";
     position:fixed;
-    width:700px;
-    height:700px;
-    background:radial-gradient(circle,#00d5ff33,transparent 70%);
-    bottom:-300px;
-    left:-200px;
+    width:800px;
+    height:800px;
+    background:radial-gradient(circle,#00d5ff22,transparent 70%);
+    bottom:-350px;
+    left:-250px;
     z-index:-1;
 }
 
-/* 导航栏 */
+/* navbar */
 
 nav{
     width:100%;
-    padding:25px 8%;
+    padding:22px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     position:fixed;
     top:0;
-    background:rgba(5,11,22,0.7);
-    backdrop-filter:blur(12px);
     z-index:1000;
+    backdrop-filter:blur(12px);
+    background:rgba(5,11,22,0.7);
     border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 nav h2{
-    color:#4ea1ff;
+    color:#5ab0ff;
     letter-spacing:1px;
 }
 
 nav ul{
     display:flex;
-    list-style:none;
     gap:35px;
+    list-style:none;
 }
 
-nav ul li a{
-    color:white;
+nav a{
     text-decoration:none;
+    color:white;
     transition:0.3s;
 }
 
-nav ul li a:hover{
-    color:#4ea1ff;
+nav a:hover{
+    color:#5ab0ff;
 }
 
-/* Hero */
+/* hero */
 
 .hero{
     min-height:100vh;
@@ -98,58 +100,58 @@ nav ul li a:hover{
 }
 
 .hero h1{
-    font-size:70px;
+    font-size:72px;
     line-height:1.1;
-    max-width:1000px;
     margin-bottom:30px;
 }
 
 .hero h1 span{
-    color:#4ea1ff;
-    text-shadow:0 0 20px #4ea1ff88;
+    color:#5ab0ff;
+    text-shadow:0 0 25px #5ab0ff88;
 }
 
 .hero p{
-    max-width:850px;
+    max-width:950px;
     font-size:22px;
-    color:#c7d1e0;
-    line-height:1.8;
+    color:#c8d2e2;
 }
 
 .hero button{
-    margin-top:40px;
+    margin-top:45px;
     padding:16px 35px;
     border:none;
     border-radius:50px;
-    background:linear-gradient(90deg,#0d5eff,#00c6ff);
+    background:linear-gradient(90deg,#005eff,#00cfff);
     color:white;
     font-size:18px;
     cursor:pointer;
     transition:0.3s;
-    box-shadow:0 0 25px #0d5eff66;
+    box-shadow:0 0 30px #005eff66;
 }
 
 .hero button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 40px #0d5effaa;
+    transform:translateY(-5px);
 }
 
-/* 通用section */
+/* section */
 
 section{
     padding:120px 10%;
 }
 
 .section-title{
-    font-size:45px;
+    font-size:50px;
     margin-bottom:20px;
 }
 
-.section-subtitle{
-    color:#aab7c8;
+.section-title span{
+    color:#5ab0ff;
+}
+
+.section-desc{
+    color:#b7c4d6;
+    max-width:1100px;
     font-size:18px;
-    max-width:900px;
-    line-height:1.8;
 }
 
 /* 卡片 */
@@ -157,34 +159,39 @@ section{
 .cards{
     margin-top:60px;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
 }
 
 .card{
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.08);
-    border-radius:25px;
+    border-radius:28px;
     padding:35px;
     transition:0.4s;
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 }
 
 .card:hover{
     transform:translateY(-10px);
-    border-color:#4ea1ff;
-    box-shadow:0 0 35px rgba(78,161,255,0.25);
+    border-color:#5ab0ff;
+    box-shadow:0 0 35px rgba(90,176,255,0.25);
 }
 
 .card h3{
-    margin-bottom:20px;
-    color:#4ea1ff;
-    font-size:24px;
+    color:#5ab0ff;
+    margin-bottom:18px;
+    font-size:26px;
+}
+
+.card h4{
+    margin-top:15px;
+    margin-bottom:10px;
+    color:#dce8f7;
 }
 
 .card p{
-    color:#d7dfea;
-    line-height:1.9;
+    color:#cfd9e8;
 }
 
 /* 数据 */
@@ -193,32 +200,32 @@ section{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:30px;
-    margin-top:60px;
+    margin-top:50px;
 }
 
-.stat-box{
-    text-align:center;
+.stat{
     padding:40px;
-    background:rgba(255,255,255,0.04);
     border-radius:25px;
+    background:rgba(255,255,255,0.04);
     border:1px solid rgba(255,255,255,0.08);
+    text-align:center;
 }
 
-.stat-box h2{
-    font-size:50px;
-    color:#4ea1ff;
-    margin-bottom:10px;
+.stat h2{
+    font-size:48px;
+    color:#5ab0ff;
+    margin-bottom:12px;
 }
 
-.stat-box p{
-    color:#c6d1de;
+.stat p{
+    color:#c8d3e3;
 }
 
 /* 时间轴 */
 
 .timeline{
     margin-top:70px;
-    border-left:2px solid #4ea1ff;
+    border-left:2px solid #5ab0ff;
     padding-left:40px;
 }
 
@@ -232,532 +239,46 @@ section{
     width:18px;
     height:18px;
     border-radius:50%;
-    background:#4ea1ff;
+    background:#5ab0ff;
     position:absolute;
     left:-50px;
     top:8px;
-    box-shadow:0 0 15px #4ea1ff;
+    box-shadow:0 0 18px #5ab0ff;
 }
 
 .timeline-item h3{
-    color:#4ea1ff;
+    color:#5ab0ff;
     margin-bottom:15px;
-    font-size:26px;
+    font-size:28px;
 }
 
 .timeline-item p{
-    color:#d6dfeb;
-    line-height:1.9;
+    color:#d5dfed;
 }
 
-/* footer */
+/* 图片 */
 
-footer{
-    padding:40px;
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,0.08);
-    color:#95a5bb;
-    margin-top:80px;
-}
-
-/* 响应式 */
-
-@media(max-width:768px){
-
-.hero h1{
-    font-size:45px;
-}
-
-nav{
-    flex-direction:column;
-    gap:15px;
-}
-
-nav ul{
-    gap:18px;
-}
-
-.section-title{
-    font-size:34px;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<nav>
-    <h2>AI Healthcare</h2>
-
-    <ul>
-        <li><a href="#impact">Impact</a></li>
-        <li><a href="#applications">Applications</a></li>
-        <li><a href="#cases">Cases</a></li>
-        <li><a href="#future">Future</a></li>
-    </ul>
-</nav>
-
-<!-- Hero -->
-
-<section class="hero">
-
-    <h1>
-        AI is <span>Accelerating</span><br>
-        Drug Discovery
-    </h1>
-
-    <p>
-        Artificial Intelligence is transforming pharmaceutical research by improving efficiency,
-        reducing development costs, predicting toxicity, and enabling scientists to design
-        entirely new molecular structures faster than ever before.
-    </p>
-
-    <button onclick="scrollToSection()">
-        Explore Innovation
-    </button>
-
-</section>
-
-<!-- Impact -->
-
-<section id="impact">
-
-    <h2 class="section-title">
-        AI's Core Impact on Drug Development
-    </h2>
-
-    <p class="section-subtitle">
-        AI technologies are reshaping the pharmaceutical industry by shifting research from
-        traditional trial-and-error methods toward data-driven intelligent systems.
-    </p>
-
-    <div class="stats">
-
-        <div class="stat-box">
-            <h2>10Y → 18M</h2>
-            <p>Drug discovery cycle shortened dramatically</p>
-        </div>
-
-        <div class="stat-box">
-            <h2>70%</h2>
-            <p>Reduction in early-stage drug discovery costs</p>
-        </div>
-
-        <div class="stat-box">
-            <h2>90%</h2>
-            <p>Reduction in unnecessary experimental testing</p>
-        </div>
-
-        <div class="stat-box">
-            <h2>95%</h2>
-            <p>Toxicity prediction accuracy in some AI systems</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- Applications -->
-
-<section id="applications">
-
-    <h2 class="section-title">
-        Key AI Applications
-    </h2>
-
-    <p class="section-subtitle">
-        AI assists pharmaceutical companies throughout nearly every stage of drug development.
-    </p>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Target Discovery</h3>
-
-            <p>
-                AI analyzes genomic data, biomedical literature, and protein interactions
-                to identify disease-related therapeutic targets more efficiently than
-                traditional hypothesis-driven research.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Molecule Design</h3>
-
-            <p>
-                Generative AI can create entirely new molecular structures and optimize
-                compounds for specific biological targets using large-scale virtual screening.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>ADMET Prediction</h3>
-
-            <p>
-                AI predicts absorption, distribution, metabolism, excretion, and toxicity
-                before laboratory synthesis, greatly reducing failure rates and costs.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Clinical Trial Optimization</h3>
-
-            <p>
-                AI improves patient recruitment, trial design, and virtual patient simulation,
-                helping reduce expensive late-stage clinical failures.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- Cases -->
-
-<section id="cases">
-
-    <h2 class="section-title">
-        Real-World AI Drug Discovery Cases
-    </h2>
-
-    <p class="section-subtitle">
-        Several cutting-edge pharmaceutical and research organizations have already
-        demonstrated how AI can revolutionize medicine.
-    </p>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-            <h3>Insilico Medicine</h3>
-
-            <p>
-                Using its Pharma.AI platform, Insilico Medicine reduced the process
-                from target discovery to preclinical candidate nomination from
-                approximately 4.5 years to only 18 months.
-            </p>
-        </div>
-
-        <div class="timeline-item">
-            <h3>DILITracer</h3>
-
-            <p>
-                Researchers from Southeast University developed an AI system combining
-                liver organoids and visual analysis to predict drug-induced liver injury,
-                achieving an accuracy of over 82%.
-            </p>
-        </div>
-
-        <div class="timeline-item">
-            <h3>Machine Learning Toxicity Prediction</h3>
-
-            <p>
-                Korean researchers developed AI frameworks capable of identifying
-                dangerous human toxicity risks that traditional animal experiments
-                often fail to detect.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- Future -->
-
-<section id="future">
-
-    <h2 class="section-title">
-        The Future of AI Pharmaceuticals
-    </h2>
-
-    <p class="section-subtitle">
-        AI may fundamentally redefine the future of medicine by enabling
-        fully personalized therapies, automated molecular engineering,
-        digital clinical trials, and precision healthcare systems.
-        However, ethical concerns surrounding algorithm bias, data privacy,
-        and medical responsibility remain major challenges.
-    </p>
-
-</section>
-
-<footer>
-    <p>
-        AI Healthcare Innovation Website | Educational Project
-    </p>
-</footer>
-
-<script>
-
-function scrollToSection(){
-    document.getElementById("impact").scrollIntoView({
-        behavior:"smooth"
-    });
-}
-
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>AI Drug Discovery</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    background:#050b16;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* 背景渐变 */
-
-body::before{
-    content:"";
-    position:fixed;
-    width:800px;
-    height:800px;
-    background:radial-gradient(circle,#0d5eff55,transparent 70%);
-    top:-300px;
-    right:-200px;
-    z-index:-1;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    width:700px;
-    height:700px;
-    background:radial-gradient(circle,#00d5ff33,transparent 70%);
-    bottom:-300px;
-    left:-200px;
-    z-index:-1;
-}
-
-/* 导航栏 */
-
-nav{
+.image-banner{
+    margin-top:50px;
     width:100%;
-    padding:25px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:fixed;
-    top:0;
-    background:rgba(5,11,22,0.7);
-    backdrop-filter:blur(12px);
-    z-index:1000;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-nav h2{
-    color:#4ea1ff;
-    letter-spacing:1px;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:35px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-nav ul li a:hover{
-    color:#4ea1ff;
-}
-
-/* Hero */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:0 10%;
-}
-
-.hero h1{
-    font-size:70px;
-    line-height:1.1;
-    max-width:1000px;
-    margin-bottom:30px;
-}
-
-.hero h1 span{
-    color:#4ea1ff;
-    text-shadow:0 0 20px #4ea1ff88;
-}
-
-.hero p{
-    max-width:850px;
-    font-size:22px;
-    color:#c7d1e0;
-    line-height:1.8;
-}
-
-.hero button{
-    margin-top:40px;
-    padding:16px 35px;
-    border:none;
-    border-radius:50px;
-    background:linear-gradient(90deg,#0d5eff,#00c6ff);
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:0.3s;
-    box-shadow:0 0 25px #0d5eff66;
-}
-
-.hero button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 40px #0d5effaa;
-}
-
-/* 通用section */
-
-section{
-    padding:120px 10%;
-}
-
-.section-title{
-    font-size:45px;
-    margin-bottom:20px;
-}
-
-.section-subtitle{
-    color:#aab7c8;
-    font-size:18px;
-    max-width:900px;
-    line-height:1.8;
-}
-
-/* 卡片 */
-
-.cards{
-    margin-top:60px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:25px;
-    padding:35px;
-    transition:0.4s;
-    backdrop-filter:blur(10px);
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    border-color:#4ea1ff;
-    box-shadow:0 0 35px rgba(78,161,255,0.25);
-}
-
-.card h3{
-    margin-bottom:20px;
-    color:#4ea1ff;
-    font-size:24px;
-}
-
-.card p{
-    color:#d7dfea;
-    line-height:1.9;
-}
-
-/* 数据 */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:30px;
-    margin-top:60px;
-}
-
-.stat-box{
-    text-align:center;
-    padding:40px;
-    background:rgba(255,255,255,0.04);
-    border-radius:25px;
+    border-radius:30px;
+    overflow:hidden;
     border:1px solid rgba(255,255,255,0.08);
 }
 
-.stat-box h2{
-    font-size:50px;
-    color:#4ea1ff;
-    margin-bottom:10px;
-}
-
-.stat-box p{
-    color:#c6d1de;
-}
-
-/* 时间轴 */
-
-.timeline{
-    margin-top:70px;
-    border-left:2px solid #4ea1ff;
-    padding-left:40px;
-}
-
-.timeline-item{
-    margin-bottom:60px;
-    position:relative;
-}
-
-.timeline-item::before{
-    content:"";
-    width:18px;
-    height:18px;
-    border-radius:50%;
-    background:#4ea1ff;
-    position:absolute;
-    left:-50px;
-    top:8px;
-    box-shadow:0 0 15px #4ea1ff;
-}
-
-.timeline-item h3{
-    color:#4ea1ff;
-    margin-bottom:15px;
-    font-size:26px;
-}
-
-.timeline-item p{
-    color:#d6dfeb;
-    line-height:1.9;
+.image-banner img{
+    width:100%;
+    display:block;
 }
 
 /* footer */
 
 footer{
-    padding:40px;
+    padding:50px;
     text-align:center;
+    color:#95a7c0;
     border-top:1px solid rgba(255,255,255,0.08);
-    color:#95a5bb;
-    margin-top:80px;
+    margin-top:100px;
 }
 
 /* 响应式 */
@@ -765,7 +286,7 @@ footer{
 @media(max-width:768px){
 
 .hero h1{
-    font-size:45px;
+    font-size:48px;
 }
 
 nav{
@@ -778,7 +299,7 @@ nav ul{
 }
 
 .section-title{
-    font-size:34px;
+    font-size:36px;
 }
 
 }
@@ -788,214 +309,435 @@ nav ul{
 
 <body>
 
-<nav>
-    <h2>AI Healthcare</h2>
+<!-- navbar -->
 
-    <ul>
-        <li><a href="#impact">Impact</a></li>
-        <li><a href="#applications">Applications</a></li>
-        <li><a href="#cases">Cases</a></li>
-        <li><a href="#future">Future</a></li>
-    </ul>
+<nav>
+
+<h2>AI Healthcare</h2>
+
+<ul>
+<li><a href="#drug">Drug Discovery</a></li>
+<li><a href="#management">Health Management</a></li>
+<li><a href="#clinical">Clinical Treatment</a></li>
+</ul>
+
 </nav>
 
-<!-- Hero -->
+<!-- hero -->
 
 <section class="hero">
 
-    <h1>
-        AI is <span>Accelerating</span><br>
-        Drug Discovery
-    </h1>
+<h1>
+The Future of <span>AI Healthcare</span>
+</h1>
 
-    <p>
-        Artificial Intelligence is transforming pharmaceutical research by improving efficiency,
-        reducing development costs, predicting toxicity, and enabling scientists to design
-        entirely new molecular structures faster than ever before.
-    </p>
+<p>
+Artificial Intelligence is reshaping medicine through intelligent drug discovery,
+continuous health management, and advanced clinical treatment systems.
+<br><br>
+人工智能正在通过智能药物研发、全天候健康管理以及先进临床治疗系统，
+重新定义未来医疗。
+</p>
 
-    <button onclick="scrollToSection()">
-        Explore Innovation
-    </button>
-
-</section>
-
-<!-- Impact -->
-
-<section id="impact">
-
-    <h2 class="section-title">
-        AI's Core Impact on Drug Development
-    </h2>
-
-    <p class="section-subtitle">
-        AI technologies are reshaping the pharmaceutical industry by shifting research from
-        traditional trial-and-error methods toward data-driven intelligent systems.
-    </p>
-
-    <div class="stats">
-
-        <div class="stat-box">
-            <h2>10Y → 18M</h2>
-            <p>Drug discovery cycle shortened dramatically</p>
-        </div>
-
-        <div class="stat-box">
-            <h2>70%</h2>
-            <p>Reduction in early-stage drug discovery costs</p>
-        </div>
-
-        <div class="stat-box">
-            <h2>90%</h2>
-            <p>Reduction in unnecessary experimental testing</p>
-        </div>
-
-        <div class="stat-box">
-            <h2>95%</h2>
-            <p>Toxicity prediction accuracy in some AI systems</p>
-        </div>
-
-    </div>
+<button onclick="document.getElementById('drug').scrollIntoView();">
+Explore Innovation
+</button>
 
 </section>
 
-<!-- Applications -->
+<!-- 药物研发 -->
 
-<section id="applications">
+<section id="drug">
 
-    <h2 class="section-title">
-        Key AI Applications
-    </h2>
+<h2 class="section-title">
+<span>01.</span> AI in Drug Discovery
+<br>
+人工智能与药物研发
+</h2>
 
-    <p class="section-subtitle">
-        AI assists pharmaceutical companies throughout nearly every stage of drug development.
-    </p>
+<p class="section-desc">
 
-    <div class="cards">
+AI is dramatically improving pharmaceutical research efficiency while reducing cost and failure risk.
+It transforms traditional “trial-and-error” development into a data-driven intelligent system.
+<br><br>
+AI正在显著提升药物研发效率，同时降低研发成本与失败风险，
+将传统“试错式研发”升级为数据驱动的智能研发模式。
 
-        <div class="card">
-            <h3>Target Discovery</h3>
+</p>
 
-            <p>
-                AI analyzes genomic data, biomedical literature, and protein interactions
-                to identify disease-related therapeutic targets more efficiently than
-                traditional hypothesis-driven research.
-            </p>
-        </div>
+<div class="stats">
 
-        <div class="card">
-            <h3>Molecule Design</h3>
+<div class="stat">
+<h2>10Y → 18M</h2>
+<p>
+Drug discovery timeline reduction
+<br>
+研发周期大幅缩短
+</p>
+</div>
 
-            <p>
-                Generative AI can create entirely new molecular structures and optimize
-                compounds for specific biological targets using large-scale virtual screening.
-            </p>
-        </div>
+<div class="stat">
+<h2>70%</h2>
+<p>
+Lower early-stage costs
+<br>
+早期研发成本降低
+</p>
+</div>
 
-        <div class="card">
-            <h3>ADMET Prediction</h3>
+<div class="stat">
+<h2>90%</h2>
+<p>
+Less experimental waste
+<br>
+减少无效实验
+</p>
+</div>
 
-            <p>
-                AI predicts absorption, distribution, metabolism, excretion, and toxicity
-                before laboratory synthesis, greatly reducing failure rates and costs.
-            </p>
-        </div>
+<div class="stat">
+<h2>95%</h2>
+<p>
+AI toxicity prediction accuracy
+<br>
+AI毒性预测准确率
+</p>
+</div>
 
-        <div class="card">
-            <h3>Clinical Trial Optimization</h3>
+</div>
 
-            <p>
-                AI improves patient recruitment, trial design, and virtual patient simulation,
-                helping reduce expensive late-stage clinical failures.
-            </p>
-        </div>
+<div class="cards">
 
-    </div>
+<div class="card">
+
+<h3>Target Discovery 靶点发现</h3>
+
+<p>
+AI analyzes genomic data, biomedical literature, and protein interactions
+to identify disease-related therapeutic targets.
+<br><br>
+AI通过分析基因组数据、生物医学文献与蛋白互作网络，
+精准识别与疾病相关的潜在治疗靶点。
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Molecule Design 分子设计</h3>
+
+<p>
+Generative AI can design entirely new molecular structures
+through ultra-large-scale virtual screening.
+<br><br>
+生成式AI能够通过超大规模虚拟筛选，
+设计全新的药物分子结构。
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>ADMET Prediction 毒性预测</h3>
+
+<p>
+AI predicts absorption, metabolism, toxicity, and side effects
+before laboratory synthesis.
+<br><br>
+AI可在分子合成前预测吸收、代谢、毒性与副作用，
+大幅降低失败率。
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Clinical Trial Optimization 临床试验优化</h3>
+
+<p>
+AI improves patient recruitment, trial design, and virtual patient simulation.
+<br><br>
+AI能够优化患者招募、试验方案设计以及虚拟患者模拟，
+降低临床试验成本。
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>Insilico Medicine 英矽智能</h3>
+
+<p>
+Insilico Medicine reduced the process from target discovery to
+preclinical candidate nomination from 4.5 years to only 18 months.
+<br><br>
+英矽智能利用生成式AI平台，
+将传统4.5年的研发流程压缩至18个月。
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>DILITracer 肝毒性AI预测</h3>
+
+<p>
+Researchers developed an AI system combining liver organoids and image analysis
+to predict drug-induced liver injury with over 82% accuracy.
+<br><br>
+研究人员利用类器官与AI图像分析技术，
+实现超过82%的药物肝毒性预测准确率。
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Machine Learning Toxicity Prediction 机器学习毒性预测</h3>
+
+<p>
+AI frameworks can identify dangerous human toxicity risks that animal models often miss.
+<br><br>
+AI能够识别传统动物实验难以发现的人体毒性风险。
+</p>
+
+</div>
+
+</div>
+
+<div class="image-banner">
+<img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?q=80&w=1600&auto=format&fit=crop">
+</div>
 
 </section>
 
-<!-- Cases -->
+<!-- 健康管理 -->
 
-<section id="cases">
+<section id="management">
 
-    <h2 class="section-title">
-        Real-World AI Drug Discovery Cases
-    </h2>
+<h2 class="section-title">
+<span>02.</span> AI in Health Management
+<br>
+人工智能与健康管理
+</h2>
 
-    <p class="section-subtitle">
-        Several cutting-edge pharmaceutical and research organizations have already
-        demonstrated how AI can revolutionize medicine.
-    </p>
+<p class="section-desc">
 
-    <div class="timeline">
+AI-powered health management combines wearable devices, cloud platforms,
+and intelligent analysis systems to shift healthcare from passive treatment
+toward proactive prevention.
+<br><br>
+AI健康管理正在结合智能穿戴设备、云平台与实时分析系统，
+推动医疗从“被动治疗”转向“主动预防”。
 
-        <div class="timeline-item">
-            <h3>Insilico Medicine</h3>
+</p>
 
-            <p>
-                Using its Pharma.AI platform, Insilico Medicine reduced the process
-                from target discovery to preclinical candidate nomination from
-                approximately 4.5 years to only 18 months.
-            </p>
-        </div>
+<div class="cards">
 
-        <div class="timeline-item">
-            <h3>DILITracer</h3>
+<div class="card">
 
-            <p>
-                Researchers from Southeast University developed an AI system combining
-                liver organoids and visual analysis to predict drug-induced liver injury,
-                achieving an accuracy of over 82%.
-            </p>
-        </div>
+<h3>AI Health Reports 智能体检报告</h3>
 
-        <div class="timeline-item">
-            <h3>Machine Learning Toxicity Prediction</h3>
+<p>
+AI systems automatically review medical examination reports,
+generate conclusions, and reduce repetitive work for doctors.
+<br><br>
+AI能够自动分析体检报告并生成健康建议，
+减少医生重复性工作。
+</p>
 
-            <p>
-                Korean researchers developed AI frameworks capable of identifying
-                dangerous human toxicity risks that traditional animal experiments
-                often fail to detect.
-            </p>
-        </div>
+</div>
 
-    </div>
+<div class="card">
+
+<h3>AI Follow-up System 智能随访系统</h3>
+
+<p>
+Hospitals use AI voice systems to follow up with discharged patients,
+improving coverage and reducing nursing workload.
+<br><br>
+医院利用AI语音系统进行术后与慢病随访，
+提升覆盖率并减少护士工作量。
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Wearable AI 穿戴式AI</h3>
+
+<p>
+Smart devices such as Apple Watch can continuously monitor heart rhythms
+and provide early warnings for diseases like atrial fibrillation.
+<br><br>
+Apple Watch等设备能够全天候监测心率，
+提前预警房颤等疾病风险。
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Future Healthcare 未来健康管理</h3>
+
+<p>
+AI health platforms may eventually provide personalized,
+24-hour preventive healthcare services.
+<br><br>
+未来AI健康平台可能实现全天候、
+个性化健康管理与疾病预防。
+</p>
+
+</div>
+
+</div>
+
+<div class="image-banner">
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop">
+</div>
 
 </section>
 
-<!-- Future -->
+<!-- 临床治疗 -->
 
-<section id="future">
+<section id="clinical">
 
-    <h2 class="section-title">
-        The Future of AI Pharmaceuticals
-    </h2>
+<h2 class="section-title">
+<span>03.</span> AI in Clinical Treatment
+<br>
+人工智能与临床治疗
+</h2>
 
-    <p class="section-subtitle">
-        AI may fundamentally redefine the future of medicine by enabling
-        fully personalized therapies, automated molecular engineering,
-        digital clinical trials, and precision healthcare systems.
-        However, ethical concerns surrounding algorithm bias, data privacy,
-        and medical responsibility remain major challenges.
-    </p>
+<p class="section-desc">
+
+AI clinical treatment systems combine robotics, remote operation,
+real-time genetic monitoring, and intelligent decision-making
+to provide expert-level treatment anywhere.
+<br><br>
+AI临床治疗系统结合机器人、远程操控、
+实时基因监测与智能决策，
+实现跨地域的专家级医疗服务。
+
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Remote Robotic Surgery 远程机器人手术</h3>
+
+<p>
+Experts can remotely control surgical robots using force-feedback systems
+and AR-assisted visualization.
+<br><br>
+专家能够通过力反馈操作台与AR视觉系统，
+远程操控手术机器人。
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Real-Time Gene Monitoring 实时基因监测</h3>
+
+<p>
+Wearable biosensors can continuously detect mutations
+and automatically trigger treatment adjustments.
+<br><br>
+可穿戴生物芯片能够持续监测基因突变，
+并自动触发治疗方案调整。
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>AI Autonomous Planning AI自主路径规划</h3>
+
+<p>
+AI can automatically plan minimally invasive procedures
+while avoiding critical blood vessels.
+<br><br>
+AI能够自动规划微创治疗路径，
+并避开关键血管结构。
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>AI Personalized Medicine AI个性化药物</h3>
+
+<p>
+Future AI systems may synthesize personalized drugs
+within hours based on patient genetic data.
+<br><br>
+未来AI可能基于患者实时基因数据，
+在数小时内自动合成个性化药物。
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>Stage 1 第一阶段</h3>
+
+<p>
+Remote robotic surgery and offline genetic monitoring.
+<br>
+远程机器人手术与离线基因监测。
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Stage 2 第二阶段</h3>
+
+<p>
+Continuous mutation monitoring and AI-assisted drug matching.
+<br>
+连续突变监测与AI辅助药物匹配。
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Stage 3 第三阶段</h3>
+
+<p>
+Fully automated AI-driven personalized drug synthesis systems.
+<br>
+全自动AI个性化药物合成系统。
+</p>
+
+</div>
+
+</div>
+
+<div class="image-banner">
+<img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?q=80&w=1600&auto=format&fit=crop">
+</div>
 
 </section>
 
 <footer>
-    <p>
-        AI Healthcare Innovation Website | Educational Project
-    </p>
+
+<p>
+AI Healthcare Revolution Website
+<br>
+人工智能医疗革命网站
+</p>
+
 </footer>
-
-<script>
-
-function scrollToSection(){
-    document.getElementById("impact").scrollIntoView({
-        behavior:"smooth"
-    });
-}
-
-</script>
 
 </body>
 </html>
