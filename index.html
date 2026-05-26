@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AI Healthcare Revolution</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Inter','Noto Sans SC',sans-serif;
 }
+
 html{
     scroll-behavior:smooth;
 }
+
 body{
     background:#f7fbff;
     color:#0f172a;
     overflow-x:hidden;
     line-height:1.8;
 }
+
 body::before{
     content:"";
     position:fixed;
@@ -33,6 +43,7 @@ body::before{
     right:-250px;
     z-index:-1;
 }
+
 body::after{
     content:"";
     position:fixed;
@@ -43,9 +54,11 @@ body::after{
     left:-250px;
     z-index:-1;
 }
+
 body.detail-open{
     overflow:hidden;
 }
+
 body.detail-open nav,
 body.detail-open main,
 body.detail-open footer{
@@ -54,12 +67,15 @@ body.detail-open footer{
     pointer-events:none;
     user-select:none;
 }
+
 nav,
 main,
 footer{
     transition:filter 0.28s ease,transform 0.28s ease;
 }
+
 /* navbar */
+
 nav{
     width:100%;
     padding:22px 8%;
@@ -73,10 +89,1044 @@ nav{
     background:rgba(255,255,255,0.82);
     border-bottom:1px solid rgba(15,23,42,0.08);
 }
+
 nav h2{
     color:#2563eb;
     font-family:'Space Grotesk',sans-serif;
     font-size:28px;
 }
+
 nav ul{
     display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0f172a;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#2563eb;
+}
+
+/* hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 10%;
+}
+
+.hero h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:84px;
+    line-height:1.05;
+    margin-bottom:35px;
+    font-weight:700;
+    letter-spacing:0;
+}
+
+.hero h1 span{
+    color:#2563eb;
+}
+
+.hero p{
+    max-width:1100px;
+    font-size:22px;
+    color:#475569;
+    line-height:2;
+    font-weight:300;
+}
+
+.hero button{
+    margin-top:45px;
+    padding:17px 38px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.35s;
+    box-shadow:0 10px 30px rgba(37,99,235,0.18);
+}
+
+.hero button:hover{
+    transform:translateY(-5px);
+}
+
+/* section */
+
+section{
+    padding:120px 10%;
+}
+
+.section-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:58px;
+    margin-bottom:25px;
+    font-weight:700;
+    letter-spacing:0;
+}
+
+.section-title span{
+    color:#2563eb;
+}
+
+.section-desc{
+    color:#475569;
+    max-width:1200px;
+    font-size:18px;
+    line-height:2;
+}
+
+/* cards */
+
+.cards{
+    margin-top:65px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+.card{
+    background:white;
+    border:1px solid rgba(15,23,42,0.06);
+    border-radius:8px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0 10px 30px rgba(15,23,42,0.04);
+    cursor:pointer;
+    position:relative;
+}
+
+.card::before{
+    content:"点击查看详细";
+    position:absolute;
+    right:20px;
+    top:20px;
+    z-index:2;
+    background:rgba(15,23,42,0.72);
+    color:white;
+    font-size:13px;
+    font-weight:600;
+    padding:7px 12px;
+    border-radius:999px;
+    opacity:0;
+    transform:translateY(-6px);
+    transition:0.28s ease;
+}
+
+.card:hover::before,
+.card:focus-visible::before{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 50px rgba(37,99,235,0.12);
+}
+
+.card:focus-visible{
+    outline:3px solid rgba(37,99,235,0.45);
+    outline-offset:5px;
+}
+
+.card-image{
+    width:100%;
+    height:250px;
+    overflow:hidden;
+    position:relative;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.card:hover .card-image img{
+    transform:scale(1.05);
+}
+
+.card-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.05) 60%,
+        rgba(255,255,255,0.16) 100%
+    );
+}
+
+.card-content{
+    padding:40px;
+}
+
+.card h3{
+    color:#2563eb;
+    margin-bottom:20px;
+    font-size:30px;
+    font-family:'Space Grotesk',sans-serif;
+    line-height:1.3;
+}
+
+.card p{
+    color:#334155;
+    line-height:2;
+    font-size:16px;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    min-height:96px;
+}
+
+.card-more{
+    margin-top:22px;
+    color:#2563eb;
+    font-weight:700;
+    font-size:15px;
+}
+
+/* detail modal */
+
+.detail-modal{
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    display:grid;
+    place-items:center;
+    padding:28px;
+    background:rgba(15,23,42,0.38);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 0.28s ease,visibility 0.28s ease;
+}
+
+.detail-modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.detail-panel{
+    width:min(980px,100%);
+    max-height:min(84vh,860px);
+    background:rgba(255,255,255,0.96);
+    border:1px solid rgba(255,255,255,0.7);
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 28px 80px rgba(15,23,42,0.28);
+    transform:translateY(18px) scale(0.98);
+    transition:transform 0.28s ease;
+    display:grid;
+    grid-template-columns:minmax(280px,0.85fr) 1.15fr;
+}
+
+.detail-modal.active .detail-panel{
+    transform:translateY(0) scale(1);
+}
+
+.detail-image{
+    min-height:100%;
+    background:#dbeafe;
+}
+
+.detail-image img{
+    width:100%;
+    height:100%;
+    min-height:460px;
+    object-fit:cover;
+    display:block;
+}
+
+.detail-content{
+    padding:42px;
+    overflow:auto;
+}
+
+.detail-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:24px;
+    margin-bottom:24px;
+}
+
+.detail-title{
+    color:#2563eb;
+    font-size:36px;
+    line-height:1.25;
+    font-family:'Space Grotesk',sans-serif;
+}
+
+.detail-close{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#eff6ff;
+    color:#0f172a;
+    font-size:30px;
+    line-height:1;
+    cursor:pointer;
+    flex:0 0 auto;
+    transition:0.22s ease;
+}
+
+.detail-close:hover{
+    background:#dbeafe;
+    color:#2563eb;
+}
+
+.detail-text{
+    color:#334155;
+    font-size:17px;
+    line-height:2;
+}
+
+/* footer */
+
+footer{
+    padding:70px;
+    text-align:center;
+    color:#64748b;
+    border-top:1px solid rgba(15,23,42,0.06);
+    margin-top:100px;
+}
+
+/* responsive */
+
+@media(max-width:900px){
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:52px;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.section-title{
+    font-size:40px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.detail-panel{
+    grid-template-columns:1fr;
+    max-height:88vh;
+}
+
+.detail-image img{
+    min-height:220px;
+    max-height:280px;
+}
+
+.detail-content{
+    padding:28px;
+}
+
+.detail-title{
+    font-size:26px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- navbar -->
+
+<nav>
+
+<h2>AI Healthcare</h2>
+
+<ul>
+<li><a href="#drug">Drug Discovery</a></li>
+<li><a href="#management">Health Management</a></li>
+<li><a href="#clinical">Clinical Treatment</a></li>
+<li><a href="#rehab">Rehabilitation</a></li>
+</ul>
+
+</nav>
+
+<main>
+
+<!-- hero -->
+
+<section class="hero">
+
+<h1>
+The Future of <span>AI Healthcare</span>
+</h1>
+
+<p>
+
+Artificial Intelligence is transforming medicine through intelligent drug discovery,
+continuous health management, advanced clinical treatment,
+and AI-powered rehabilitation systems.
+
+<br><br>
+
+人工智能正在通过智能药物研发、
+全天候健康管理、
+先进临床治疗以及AI康复系统，
+重新定义未来医疗。
+
+</p>
+
+<button onclick="document.getElementById('drug').scrollIntoView();">
+Explore Innovation
+</button>
+
+</section>
+
+<!-- 药物研发 -->
+
+<section id="drug">
+
+<h2 class="section-title">
+<span>01.</span> AI in Drug Discovery
+<br>
+人工智能与药物研发
+</h2>
+
+<p class="section-desc">
+
+AI technology dramatically improves pharmaceutical research efficiency while reducing development costs and failure risks.
+Traditional drug discovery relied heavily on long experimental cycles and repeated trial-and-error processes.
+Today, AI transforms this process into a data-driven intelligent system.
+
+<br><br>
+
+AI技术正在显著提升药物研发效率，同时降低研发成本与失败风险。
+传统药物研发高度依赖漫长实验与反复试错，
+而AI正在将这一过程转变为数据驱动的智能研发模式。
+
+</p>
+
+<div class="cards">
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?q=80&w=1200&auto=format&fit=crop" alt="Laboratory drug research">
+</div>
+<div class="card-content">
+
+<h3>Target Discovery 靶点发现</h3>
+
+<p>
+
+AI analyzes genomic data and biomedical literature to identify therapeutic targets.
+
+<br><br>
+
+Traditional target discovery depends heavily on human hypotheses,
+while AI can process massive datasets far beyond human capability.
+
+<br><br>
+
+AI通过分析基因数据与生物医学文献，
+精准识别潜在治疗靶点。
+
+<br><br>
+
+传统靶点发现依赖研究人员经验，
+而AI能够处理远超人类能力的大规模数据。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1200&auto=format&fit=crop" alt="Molecule model in laboratory">
+</div>
+<div class="card-content">
+
+<h3>Molecule Design 分子设计</h3>
+
+<p>
+
+Generative AI can design new molecular structures through ultra-large-scale virtual screening.
+
+<br><br>
+
+AI can screen billions of compounds within seconds,
+dramatically reducing development time.
+
+<br><br>
+
+生成式AI能够通过超大规模虚拟筛选，
+设计全新的药物分子结构。
+
+<br><br>
+
+AI能够在数秒内完成海量化合物筛选，
+大幅缩短研发时间。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?q=80&w=1200&auto=format&fit=crop" alt="Chemical analysis">
+</div>
+<div class="card-content">
+
+<h3>ADMET Prediction 毒性预测</h3>
+
+<p>
+
+AI predicts absorption, metabolism, toxicity,
+and side effects before laboratory synthesis.
+
+<br><br>
+
+This reduces failed experiments and lowers overall costs.
+
+<br><br>
+
+AI能够在实验前预测药物的吸收、
+代谢、毒性与副作用。
+
+<br><br>
+
+这种方式能够减少失败实验并降低研发成本。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop" alt="Clinical trial research">
+</div>
+<div class="card-content">
+
+<h3>Clinical Trial Optimization 临床试验优化</h3>
+
+<p>
+
+AI improves patient recruitment,
+trial design, and virtual patient simulation.
+
+<br><br>
+
+Clinical trials are the most expensive stage of drug development,
+and AI helps reduce failure risks.
+
+<br><br>
+
+AI能够优化患者招募、
+临床试验设计以及虚拟患者模拟。
+
+<br><br>
+
+临床试验是药物研发中成本最高的阶段，
+AI能够显著降低失败风险。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- 健康管理 -->
+
+<section id="management">
+
+<h2 class="section-title">
+<span>02.</span> AI in Health Management
+<br>
+人工智能与健康管理
+</h2>
+
+<p class="section-desc">
+
+AI-powered health management combines wearable devices,
+cloud platforms, and intelligent monitoring systems
+to shift healthcare from passive treatment toward proactive prevention.
+
+<br><br>
+
+AI健康管理结合智能穿戴设备、云平台与实时监测系统，
+推动医疗从“被动治疗”转向“主动预防”。
+
+</p>
+
+<div class="cards">
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" alt="Digital health report">
+</div>
+<div class="card-content">
+
+<h3>AI Health Reports 智能体检报告</h3>
+
+<p>
+
+AI systems automatically review medical examination reports
+and generate intelligent health suggestions.
+
+<br><br>
+
+AI能够自动分析体检报告并生成智能健康建议。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop" alt="Hospital follow-up care">
+</div>
+<div class="card-content">
+
+<h3>AI Follow-up System 智能随访系统</h3>
+
+<p>
+
+Hospitals use AI voice systems for chronic disease management
+and post-surgery follow-up.
+
+<br><br>
+
+医院利用AI语音系统进行慢病与术后随访。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1510017803434-a899398421b3?q=80&w=1200&auto=format&fit=crop" alt="Wearable health technology">
+</div>
+<div class="card-content">
+
+<h3>Wearable AI 穿戴式AI</h3>
+
+<p>
+
+Wearable AI devices continuously monitor health data
+and detect abnormalities early.
+
+<br><br>
+
+穿戴式AI设备能够持续监测健康数据并提前发现异常。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&auto=format&fit=crop" alt="Future healthcare technology">
+</div>
+<div class="card-content">
+
+<h3>Future Healthcare 未来健康管理</h3>
+
+<p>
+
+Future AI systems may provide personalized,
+24-hour preventive healthcare services.
+
+<br><br>
+
+未来AI系统可能实现全天候个性化健康管理。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- 临床治疗 -->
+
+<section id="clinical">
+
+<h2 class="section-title">
+<span>03.</span> AI in Clinical Treatment
+<br>
+人工智能与临床治疗
+</h2>
+
+<p class="section-desc">
+
+AI clinical systems integrate robotics,
+remote operation, real-time genetic monitoring,
+and intelligent treatment planning.
+
+<br><br>
+
+AI临床系统结合机器人、
+远程操控、
+实时基因监测与智能治疗规划。
+
+</p>
+
+<div class="cards">
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?q=80&w=1200&auto=format&fit=crop" alt="Robotic surgery">
+</div>
+<div class="card-content">
+
+<h3>Remote Robotic Surgery 远程机器人手术</h3>
+
+<p>
+
+Experts can remotely operate robotic systems
+through AR-assisted interfaces.
+
+<br><br>
+
+专家能够通过AR系统远程操控手术机器人。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1580281657527-47f249e8f4df?q=80&w=1200&auto=format&fit=crop" alt="Gene monitoring lab">
+</div>
+<div class="card-content">
+
+<h3>Gene Monitoring 实时基因监测</h3>
+
+<p>
+
+Wearable biosensors continuously detect mutation changes
+and monitor disease progression.
+
+<br><br>
+
+可穿戴生物芯片能够持续监测基因变化与疾病进展。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?q=80&w=1200&auto=format&fit=crop" alt="Surgical planning">
+</div>
+<div class="card-content">
+
+<h3>AI Surgical Planning AI路径规划</h3>
+
+<p>
+
+AI autonomously plans minimally invasive procedures
+while avoiding critical blood vessels and organs.
+
+<br><br>
+
+AI能够自主规划微创治疗路径，
+并避开关键血管与器官。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1576671081837-49000212a370?q=80&w=1200&auto=format&fit=crop" alt="Personalized medicine">
+</div>
+<div class="card-content">
+
+<h3>Personalized Medicine 个性化药物</h3>
+
+<p>
+
+Future AI may synthesize personalized drugs
+based on patient genetic information.
+
+<br><br>
+
+未来AI可能基于患者基因信息生成个性化药物。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- 康复治疗 -->
+
+<section id="rehab">
+
+<h2 class="section-title">
+<span>04.</span> AI in Rehabilitation
+<br>
+人工智能与康复治疗
+</h2>
+
+<p class="section-desc">
+
+AI-powered rehabilitation combines intelligent sensing,
+motion analysis, wearable monitoring,
+and adaptive training systems.
+
+<br><br>
+
+AI康复系统结合智能感知、
+动作分析、
+可穿戴监测与自适应训练系统，
+提升康复治疗的精准度与效率。
+
+</p>
+
+<div class="cards">
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1200&auto=format&fit=crop" alt="Rehabilitation assessment">
+</div>
+<div class="card-content">
+
+<h3>Smart Assessment 智能精准评估</h3>
+
+<p>
+
+AI analyzes gait, muscle strength,
+and balance ability through sensors and motion tracking.
+
+<br><br>
+
+AI通过传感器与动作捕捉技术，
+量化分析患者步态、肌力与平衡能力。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=1200&auto=format&fit=crop" alt="Personalized rehabilitation training">
+</div>
+<div class="card-content">
+
+<h3>Personalized Training 个性化训练</h3>
+
+<p>
+
+AI adjusts rehabilitation intensity dynamically
+based on patient recovery status.
+
+<br><br>
+
+AI能够根据患者恢复状态，
+动态调整训练难度与强度。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=1200&auto=format&fit=crop" alt="Remote patient monitoring">
+</div>
+<div class="card-content">
+
+<h3>Remote Monitoring 智能监护</h3>
+
+<p>
+
+Wearable AI devices monitor heart rate,
+movement, and fall risks in real time.
+
+<br><br>
+
+可穿戴AI设备能够实时监测心率、
+运动状态与跌倒风险。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+<div class="card" tabindex="0">
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1200&auto=format&fit=crop" alt="Cognitive rehabilitation">
+</div>
+<div class="card-content">
+
+<h3>Cognitive Rehabilitation 认知康复</h3>
+
+<p>
+
+AI supports cognitive rehabilitation,
+speech therapy, and memory training.
+
+<br><br>
+
+AI能够辅助认知康复、
+语言训练与记忆恢复。
+
+</p>
+<div class="card-more">查看详细内容</div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+
+AI Healthcare Revolution Website
+<br>
+人工智能医疗革命网站
+
+</p>
+
+</footer>
+
+<div class="detail-modal" id="detailModal" aria-hidden="true">
+    <div class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+        <div class="detail-image">
+            <img id="detailImage" src="" alt="">
+        </div>
+        <div class="detail-content">
+            <div class="detail-top">
+                <h2 class="detail-title" id="detailTitle"></h2>
+                <button class="detail-close" type="button" aria-label="关闭详情">&times;</button>
+            </div>
+            <div class="detail-text" id="detailText"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+const modal = document.getElementById('detailModal');
+const detailTitle = document.getElementById('detailTitle');
+const detailText = document.getElementById('detailText');
+const detailImage = document.getElementById('detailImage');
+const closeButton = modal.querySelector('.detail-close');
+
+function openDetail(card){
+    const title = card.querySelector('h3').textContent.trim();
+    const text = card.querySelector('p').innerHTML;
+    const image = card.querySelector('img');
+
+    detailTitle.textContent = title;
+    detailText.innerHTML = text;
+    detailImage.src = image.src;
+    detailImage.alt = image.alt || title;
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('detail-open');
+    closeButton.focus();
+}
+
+function closeDetail(){
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('detail-open');
+}
+
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => openDetail(card));
+    card.addEventListener('keydown', event => {
+        if(event.key === 'Enter' || event.key === ' '){
+            event.preventDefault();
+            openDetail(card);
+        }
+    });
+});
+
+closeButton.addEventListener('click', closeDetail);
+
+modal.addEventListener('click', event => {
+    if(event.target === modal){
+        closeDetail();
+    }
+});
+
+document.addEventListener('keydown', event => {
+    if(event.key === 'Escape' && modal.classList.contains('active')){
+        closeDetail();
+    }
+});
+</script>
+
+</body>
+
+</html>
