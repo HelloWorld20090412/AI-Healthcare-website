@@ -96,6 +96,10 @@ nav h2{
     font-size:28px;
 }
 
+.brand-health{
+    color:#ef4444;
+}
+
 .nav-menu{
     position:relative;
 }
@@ -220,16 +224,30 @@ nav h2{
     letter-spacing:0;
 }
 
-.hero h1 span{
+.hero h1 .ai-word{
     color:#7dd3fc;
 }
 
-.hero p{
-    max-width:1100px;
-    font-size:22px;
+.hero h1 .health-care{
+    color:#ef4444;
+}
+
+.hero-intro{
+    max-width:980px;
+    font-size:18px;
     color:#e2e8f0;
-    line-height:2;
+    line-height:1.8;
     font-weight:300;
+}
+
+.intro-label{
+    display:block;
+    margin-bottom:16px;
+    color:#7dd3fc;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
 }
 
 .hero button{
@@ -254,10 +272,11 @@ nav h2{
 
 section{
     padding:120px 10%;
+    scroll-margin-top:110px;
 }
 
 .section-title{
-    font-family:'Space Grotesk',sans-serif;
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size:58px;
     margin-bottom:25px;
     font-weight:700;
@@ -266,13 +285,15 @@ section{
 
 .section-title span{
     color:#2563eb;
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .section-desc{
     color:#475569;
     max-width:1200px;
-    font-size:18px;
-    line-height:2;
+    font-size:16px;
+    line-height:1.85;
+    font-family:'Times New Roman',SimSun,'宋体',serif;
 }
 
 /* cards */
@@ -359,12 +380,12 @@ section{
 }
 
 .card-content{
-    padding:40px;
+    padding:34px 40px 38px;
 }
 
 .card h3{
     color:#2563eb;
-    margin-bottom:20px;
+    margin-bottom:0;
     font-size:30px;
     font-family:'Space Grotesk',sans-serif;
     line-height:1.3;
@@ -386,6 +407,11 @@ section{
     color:#2563eb;
     font-weight:700;
     font-size:15px;
+}
+
+.card .card-content > p,
+.card .card-more{
+    display:none;
 }
 
 /* team */
@@ -546,33 +572,71 @@ footer{
 }
 
 nav{
-    flex-direction:column;
-    gap:15px;
+    flex-direction:row;
+    gap:12px;
+    padding:16px 5%;
+}
+
+nav h2{
+    font-size:24px;
+    line-height:1.1;
+    white-space:nowrap;
+}
+
+.hero{
+    min-height:100svh;
+    padding:125px 8% 80px;
+    justify-content:flex-start;
+}
+
+section{
+    scroll-margin-top:110px;
 }
 
 .nav-menu{
-    width:100%;
-    text-align:center;
+    width:auto;
+    text-align:right;
+    margin-left:auto;
+}
+
+.nav-menu-button{
+    font-size:14px;
+    line-height:1.25;
+    max-width:230px;
+    text-align:right;
 }
 
 .nav-dropdown{
-    left:50%;
-    right:auto;
-    width:min(310px,90vw);
-    transform:translate(-50%,-8px);
+    left:auto;
+    right:0;
+    width:min(310px,88vw);
+    text-align:left;
+    transform:translateY(-8px);
 }
 
 .nav-menu:hover .nav-dropdown,
 .nav-menu:focus-within .nav-dropdown{
-    transform:translate(-50%,0);
+    transform:translateY(0);
 }
 
 .section-title{
-    font-size:40px;
+    font-size:32px;
+    line-height:1.25;
 }
 
-.hero p{
-    font-size:18px;
+.section-desc{
+    font-size:14px;
+    line-height:1.75;
+}
+
+.hero-intro{
+    font-size:15px;
+    line-height:1.75;
+}
+
+.intro-label{
+    font-size:12px;
+    margin-bottom:12px;
 }
 
 .detail-panel{
@@ -613,7 +677,7 @@ nav{
 
 <nav>
 
-<h2>AI Healthcare</h2>
+<h2>AI <span class="brand-health">Healthcare</span></h2>
 
 <div class="nav-menu">
 <button class="nav-menu-button" type="button">AI and Future Career Development</button>
@@ -634,10 +698,12 @@ nav{
 <section class="hero">
 
 <h1>
-The Future of <span>AI Health Care</span>
+The Future of <span class="ai-word">AI</span> <span class="health-care">Health Care</span>
 </h1>
 
-<p>
+<p class="hero-intro">
+
+<span class="intro-label">Introduction</span>
 
 Artificial Intelligence is transforming medicine through intelligent drug discovery,
 continuous health management, advanced clinical treatment,
@@ -653,7 +719,7 @@ and AI-powered rehabilitation systems.
 </p>
 
 <button onclick="document.getElementById('drug').scrollIntoView();">
-Explore Innovation
+Continue
 </button>
 
 </section>
@@ -690,7 +756,7 @@ AI技术正在显著提升药物研发效率，同时降低研发成本与失败
 </div>
 <div class="card-content">
 
-<h3>Target Discovery 靶点发现</h3>
+<h3>Target Discovery<br>靶点发现</h3>
 
 <p>
 
@@ -723,7 +789,7 @@ AI通过分析基因数据与生物医学文献，
 </div>
 <div class="card-content">
 
-<h3>Molecule Design 分子设计</h3>
+<h3>Molecule Design<br>分子设计</h3>
 
 <p>
 
@@ -756,7 +822,7 @@ AI能够在数秒内完成海量化合物筛选，
 </div>
 <div class="card-content">
 
-<h3>ADMET Prediction 毒性预测</h3>
+<h3>ADMET Prediction<br>毒性预测</h3>
 
 <p>
 
@@ -788,7 +854,7 @@ AI能够在实验前预测药物的吸收、
 </div>
 <div class="card-content">
 
-<h3>Clinical Trial Optimization 临床试验优化</h3>
+<h3>Clinical Trial Optimization<br>临床试验优化</h3>
 
 <p>
 
@@ -851,7 +917,7 @@ AI健康管理结合智能穿戴设备、云平台与实时监测系统，
 </div>
 <div class="card-content">
 
-<h3>AI Health Reports 智能体检报告</h3>
+<h3>AI Health Reports<br>智能体检报告</h3>
 
 <p>
 
@@ -874,7 +940,7 @@ AI能够自动分析体检报告并生成智能健康建议。
 </div>
 <div class="card-content">
 
-<h3>AI Follow-up System 智能随访系统</h3>
+<h3>AI Follow-up System<br>智能随访系统</h3>
 
 <p>
 
@@ -897,7 +963,7 @@ and post-surgery follow-up.
 </div>
 <div class="card-content">
 
-<h3>Wearable AI 穿戴式AI</h3>
+<h3>Wearable AI<br>穿戴式AI</h3>
 
 <p>
 
@@ -920,7 +986,7 @@ and detect abnormalities early.
 </div>
 <div class="card-content">
 
-<h3>Future Healthcare 未来健康管理</h3>
+<h3>Future Healthcare<br>未来健康管理</h3>
 
 <p>
 
@@ -973,7 +1039,7 @@ AI临床系统结合机器人、
 </div>
 <div class="card-content">
 
-<h3>Remote Robotic Surgery 远程机器人手术</h3>
+<h3>Remote Robotic Surgery<br>远程机器人手术</h3>
 
 <p>
 
@@ -996,7 +1062,7 @@ through AR-assisted interfaces.
 </div>
 <div class="card-content">
 
-<h3>Gene Monitoring 实时基因监测</h3>
+<h3>Gene Monitoring<br>实时基因监测</h3>
 
 <p>
 
@@ -1019,7 +1085,7 @@ and monitor disease progression.
 </div>
 <div class="card-content">
 
-<h3>AI Surgical Planning AI路径规划</h3>
+<h3>AI Surgical Planning<br>AI路径规划</h3>
 
 <p>
 
@@ -1043,7 +1109,7 @@ AI能够自主规划微创治疗路径，
 </div>
 <div class="card-content">
 
-<h3>Personalized Medicine 个性化药物</h3>
+<h3>Personalized Medicine<br>个性化药物</h3>
 
 <p>
 
@@ -1097,7 +1163,7 @@ AI康复系统结合智能感知、
 </div>
 <div class="card-content">
 
-<h3>Smart Assessment 智能精准评估</h3>
+<h3>Smart Assessment<br>智能精准评估</h3>
 
 <p>
 
@@ -1121,7 +1187,7 @@ AI通过传感器与动作捕捉技术，
 </div>
 <div class="card-content">
 
-<h3>Personalized Training 个性化训练</h3>
+<h3>Personalized Training<br>个性化训练</h3>
 
 <p>
 
@@ -1145,7 +1211,7 @@ AI能够根据患者恢复状态，
 </div>
 <div class="card-content">
 
-<h3>Remote Monitoring 智能监护</h3>
+<h3>Remote Monitoring<br>智能监护</h3>
 
 <p>
 
@@ -1169,7 +1235,7 @@ movement, and fall risks in real time.
 </div>
 <div class="card-content">
 
-<h3>Cognitive Rehabilitation 认知康复</h3>
+<h3>Cognitive Rehabilitation<br>认知康复</h3>
 
 <p>
 
